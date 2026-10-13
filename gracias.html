@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gracias por tu compra | CH Studio</title>
+<meta name="description" content="Tu código de compra de CH Studio.">
+<meta property="og:title" content="Gracias por tu compra | CH Studio">
+<meta property="og:description" content="Tu código de compra de CH Studio.">
+<meta property="og:image" content="https://eldelasfotoschimbitas.github.io/chstudio/img/og.jpg">
+<meta property="og:url" content="https://eldelasfotoschimbitas.github.io/chstudio/gracias.html">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="barra">
+  <div class="izq"><a class="volver" href="index.html#apps"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Volver</a><a class="marca" href="index.html" aria-label="CH Studio, inicio"><img src="img/ch.png" alt="" width="34" height="34"><span>CH Studio</span></a></div>
+  <nav><a href="index.html#apps">Todas las apps</a><a href="index.html#comprar-como">Cómo comprar</a><div class="moneda" role="group" aria-label="Moneda"><button type="button" data-moneda="cop" aria-pressed="true">COP</button><button type="button" data-moneda="usd" aria-pressed="false">USD</button></div></nav>
+</header>
+<a class="subir" href="#" aria-label="Volver arriba"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 15l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+<main class="gracias">
+<section>
+  <div id="g-espera">
+    <div class="giro" aria-hidden="true"></div>
+    <h1>Confirmando tu pago…</h1>
+    <p class="lead">Esto toma unos segundos. No cierres esta página.</p>
+  </div>
+  <div id="g-pendiente" hidden>
+    <h1>Tu pago está en proceso</h1>
+    <p class="lead">Pagos por PSE o Efecty pueden tardar unos minutos. Cuando se apruebe te llega el código a <b data-g="correo"></b>. Puedes dejar esta página abierta.</p>
+  </div>
+  <div id="g-ok" hidden>
+    <p class="paso">Pago aprobado</p>
+    <h1>¡Gracias por comprar <span data-g="nombre"></span>!</h1>
+    <p class="lead">Este es tu código de compra. También te lo enviamos a <b data-g="correo"></b>.</p>
+    <div class="codigo-compra"><code id="g-codigo"></code><button type="button" class="btn" id="g-copiar">Copiar</button></div>
+    <div class="cta">
+      <a class="btn wa" id="g-wa" href="#" target="_blank" rel="noopener">Guardarlo en mi WhatsApp</a>
+      <a class="btn sec solo-pc" id="g-descarga" href="#">Descargar instalador</a>
+      <button type="button" class="btn sec solo-movil" id="g-enviar">Enviar link a mi PC</button>
+    </div>
+    <ol class="g-pasos">
+      <li>Instala la app en tu computador con Windows.</li>
+      <li>Ábrela y en «Ya compré» pega tu código.</li>
+      <li>Listo. Queda activada para siempre en ese computador.</li>
+    </ol>
+  </div>
+  <div id="g-error" hidden>
+    <h1>No pudimos confirmar tu pago</h1>
+    <p class="lead">Si ya pagaste, escríbenos con tu comprobante y te ayudamos de inmediato.</p>
+    <div class="cta"><a class="btn wa" href="https://wa.me/573133469261" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
+  </div>
+</section>
+</main>
+<footer class="pie">
+  <div><img src="img/ch.png" alt="" width="40" height="40"><p>CH Studio<br><span>Programas de Edson Penagos para fotógrafos</span></p></div>
+  <div class="pie-links">
+    <a href="https://wa.me/573133469261" target="_blank" rel="noopener">WhatsApp +57 313 346 9261</a>
+    <a href="https://www.instagram.com/eldelasfotoschimbitas" target="_blank" rel="noopener">Instagram @eldelasfotoschimbitas</a>
+  </div>
+</footer>
+<script>window.CH = {"wa": "573133469261", "descarga": "https://github.com/eldelasfotoschimbitas/chstudio/releases/latest/download/", "api": "https://chstudio-api.netlify.app"};</script>
+<script src="gracias.js"></script>
+</body></html>

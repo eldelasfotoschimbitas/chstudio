@@ -32,7 +32,7 @@
     <p class="prod-precio"><span class="pr grande" data-cop="49000" data-usd="12" data-cop0="79000" data-usd0="19"><s aria-label="Precio normal">$79.000</s> <b>$49.000</b></span><span class="lanz">Precio de lanzamiento</span></p>
     <div class="cta">
       <button type="button" class="btn" data-comprar data-nombre="Exportar Redes" data-cop="49000" data-usd="12" data-cop0="79000" data-usd0="19" data-archivo="CHStudio-ExportarRedes-Setup.exe" data-mb="23">Comprar</button>
-      <a class="btn sec" href="https://github.com/eldelasfotoschimbitas/chstudio/releases/latest/download/CHStudio-ExportarRedes-Setup.exe">Descargar instalador</a>
+      <a class="btn sec" data-descarga="CHStudio-ExportarRedes-Setup.exe" href="https://github.com/eldelasfotoschimbitas/chstudio/releases/latest/download/CHStudio-ExportarRedes-Setup.exe">Descargar instalador</a>
     </div>
     <p class="req">Windows 10 y 11. Funciona sin internet. Licencia para un computador.</p>
   </div>
@@ -91,7 +91,7 @@
   <form method="dialog" class="cerrar-f"><button class="cerrar" aria-label="Cerrar">×</button></form>
   <h2 id="compra-titulo">Comprar <span data-c="nombre"></span></h2>
   <p class="precio-dlg"><s data-c="antes"></s> <b data-c="precio"></b> <span class="lanz">Precio de lanzamiento</span></p>
-  <ol class="pasos-compra">
+  <ol class="pasos-compra solo-pc">
     <li>
       <h3>Descarga e instala</h3>
       <p>Funciona en Windows 10 y 11. Pesa <span data-c="mb"></span> MB.</p>
@@ -109,7 +109,27 @@
     <li>
       <h3>Recibe tu clave</h3>
       <p>Cuando confirmemos el pago te enviamos tu clave de activación.</p>
-      <a class="btn wa" id="enviar-wa" href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <a class="btn wa" data-wa href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </li>
+  </ol>
+  <ol class="pasos-compra solo-movil">
+    <li>
+      <h3>Escríbenos para pagar</h3>
+      <p>Te enviamos cómo pagar <span data-c="precio3"></span>. <span class="intl">Desde fuera de Colombia también puedes pagar en dólares.</span></p>
+      <a class="btn wa" data-wa href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </li>
+    <li>
+      <h3>Instálala en tu computador</h3>
+      <p>Es un programa para PC con Windows 10 u 11. Mándate el link para abrirlo allá.</p>
+      <button type="button" class="btn sec" data-enviar-link>Enviar link a mi PC</button>
+    </li>
+    <li>
+      <h3>Envíanos tu código de equipo</h3>
+      <p>Al abrir la app en el PC aparece tu código y un botón verde para mandárnoslo.</p>
+    </li>
+    <li>
+      <h3>Recibe tu clave</h3>
+      <p>La pegas en la app y queda activada para siempre en ese computador.</p>
     </li>
   </ol>
 </dialog>

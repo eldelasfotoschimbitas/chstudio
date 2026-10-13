@@ -13,7 +13,7 @@
     const codigo = campo.value.trim().toUpperCase();
     const txt = `Hola, quiero comprar ${actual.nombre} (${cop(actual.precio)}).\n` +
       `Mi código de equipo es: ${codigo || "(lo envío en un momento)"}\n` +
-      `Adjunto el comprobante de pago.`;
+      `¿Me envías los datos para pagar?`;
     wa.href = `https://wa.me/${window.CH.wa}?text=${encodeURIComponent(txt)}`;
   }
 

@@ -1,52 +1,84 @@
-// Ventana de compra: llena el producto, valida el código y arma el mensaje de WhatsApp.
+// Moneda (COP/USD), ventana de compra y botón para subir.
 (() => {
+  const fmt = {
+    cop: (n) => "$" + Number(n).toLocaleString("es-CO"),
+    usd: (n) => "US$" + Number(n).toLocaleString("en-US"),
+  };
+  let moneda = "cop";
+  try {
+    const guardada = localStorage.getItem("chs-moneda");
+    if (guardada === "usd" || guardada === "cop") moneda = guardada;
+    else if (navigator.language && !navigator.language.toLowerCase().startsWith("es")) moneda = "usd";  // visitas de otros idiomas ven dólares
+  } catch (_) {}
+
+  function pintarPrecios() {
+    document.querySelectorAll(".pr").forEach((el) => {
+      el.querySelector("s").textContent = fmt[moneda](el.dataset[moneda + "0"]);
+      el.querySelector("b").textContent = fmt[moneda](el.dataset[moneda]);
+    });
+    document.querySelectorAll("[data-moneda]").forEach((b) =>
+      b.setAttribute("aria-pressed", String(b.dataset.moneda === moneda)));
+    document.querySelectorAll(".intl").forEach((x) => (x.hidden = moneda !== "usd"));
+    if (actual) llenarDialogo();
+  }
+
+  document.querySelectorAll("[data-moneda]").forEach((b) =>
+    b.addEventListener("click", () => {
+      moneda = b.dataset.moneda;
+      try { localStorage.setItem("chs-moneda", moneda); } catch (_) {}
+      pintarPrecios();
+    }));
+
+  // ---- compra ----
   const dlg = document.getElementById("compra");
-  if (!dlg) return;
-  const cop = (n) => "$" + Number(n).toLocaleString("es-CO");
-  const campo = dlg.querySelector("#codigo");
-  const wa = dlg.querySelector("#enviar-wa");
+  const campo = dlg && dlg.querySelector("#codigo");
+  const wa = dlg && dlg.querySelector("#enviar-wa");
   let actual = null;
 
-  try { campo.value = localStorage.getItem("chs-codigo") || ""; } catch (_) {}
-
   function mensaje() {
-    const codigo = campo.value.trim().toUpperCase();
-    const txt = `Hola, quiero comprar ${actual.nombre} (${cop(actual.precio)}).\n` +
+    const codigo = campo.value.trim().toUpperCase().replace(/[^A-Z0-9-]/g, "").slice(0, 20);
+    const precio = fmt[moneda](actual[moneda]);
+    const txt = `Hola, quiero comprar ${actual.nombre} (${precio}${moneda === "usd" ? ", pago desde fuera de Colombia" : ""}).\n` +
       `Mi código de equipo es: ${codigo || "(lo envío en un momento)"}\n` +
       `¿Me envías los datos para pagar?`;
     wa.href = `https://wa.me/${window.CH.wa}?text=${encodeURIComponent(txt)}`;
   }
 
-  document.querySelectorAll("[data-comprar]").forEach((b) => {
-    b.addEventListener("click", () => {
-      actual = { nombre: b.dataset.nombre, precio: b.dataset.precio, archivo: b.dataset.archivo, mb: b.dataset.mb };
-      dlg.querySelectorAll('[data-c="nombre"]').forEach((x) => (x.textContent = actual.nombre));
-      dlg.querySelector('[data-c="precio"]').textContent = cop(actual.precio);
-      dlg.querySelector('[data-c="precio2"]').textContent = cop(actual.precio);
-      dlg.querySelector('[data-c="mb"]').textContent = actual.mb;
-      dlg.querySelector('[data-c="descarga"]').href = window.CH.descarga + actual.archivo;
-      mensaje();
-      dlg.showModal();
-    });
-  });
-
-  campo.addEventListener("input", () => {
-    try { localStorage.setItem("chs-codigo", campo.value.trim()); } catch (_) {}
+  function llenarDialogo() {
+    dlg.querySelectorAll('[data-c="nombre"]').forEach((x) => (x.textContent = actual.nombre));
+    dlg.querySelector('[data-c="antes"]').textContent = fmt[moneda](actual[moneda + "0"]);
+    dlg.querySelector('[data-c="precio"]').textContent = fmt[moneda](actual[moneda]);
+    dlg.querySelector('[data-c="precio2"]').textContent = fmt[moneda](actual[moneda]);
+    dlg.querySelector('[data-c="mb"]').textContent = actual.mb;
+    dlg.querySelector('[data-c="descarga"]').href = window.CH.descarga + actual.archivo;
     mensaje();
-  });
+  }
 
-  dlg.querySelectorAll(".copiar").forEach((b) => {
-    b.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(b.dataset.copiar);
-        b.textContent = "Copiado";
-      } catch (_) {
-        b.textContent = "Selecciona y copia";
-      }
-      setTimeout(() => (b.textContent = "Copiar"), 1800);
+  if (dlg) {
+    try { campo.value = localStorage.getItem("chs-codigo") || ""; } catch (_) {}
+    document.querySelectorAll("[data-comprar]").forEach((b) => {
+      b.addEventListener("click", () => {
+        const d = b.dataset;
+        actual = { nombre: d.nombre, cop: d.cop, usd: d.usd, cop0: d.cop0, usd0: d.usd0, archivo: d.archivo, mb: d.mb };
+        llenarDialogo();
+        dlg.showModal();
+      });
     });
-  });
+    campo.addEventListener("input", () => {
+      try { localStorage.setItem("chs-codigo", campo.value.trim()); } catch (_) {}
+      mensaje();
+    });
+    dlg.addEventListener("click", (ev) => { if (ev.target === dlg) dlg.close(); });
+  }
 
-  // clic fuera del cuadro = cerrar
-  dlg.addEventListener("click", (ev) => { if (ev.target === dlg) dlg.close(); });
+  // ---- subir ----
+  const subir = document.querySelector(".subir");
+  if (subir) {
+    const ver = () => subir.classList.toggle("ver", window.scrollY > 700);
+    window.addEventListener("scroll", ver, { passive: true });
+    ver();
+    subir.addEventListener("click", (ev) => { ev.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+  }
+
+  pintarPrecios();
 })();

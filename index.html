@@ -17,9 +17,10 @@
 </head>
 <body>
 <header class="barra">
-  <a class="marca" href="index.html" aria-label="CH Studio, inicio"><img src="img/ch.png" alt="" width="34" height="34"><span>CH Studio</span></a>
-  <nav><a href="#apps">Apps</a><a href="#comprar-como">Cómo comprar</a><a href="#preguntas">Preguntas</a></nav>
+  <div class="izq"><a class="marca" href="index.html" aria-label="CH Studio, inicio"><img src="img/ch.png" alt="" width="34" height="34"><span>CH Studio</span></a></div>
+  <nav><a href="#apps">Apps</a><a href="#comprar-como">Cómo comprar</a><a href="#preguntas">Preguntas</a><div class="moneda" role="group" aria-label="Moneda"><button type="button" data-moneda="cop" aria-pressed="true">COP</button><button type="button" data-moneda="usd" aria-pressed="false">USD</button></div></nav>
 </header>
+<a class="subir" href="#" aria-label="Volver arriba"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 15l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 
 <main>
 <section class="hero">
@@ -28,7 +29,7 @@
     <p class="lead">Cinco programas para Windows que uso en cada trabajo de fotografía, de la selección a la entrega. Ahora puedes tenerlos tú.</p>
     <div class="cta">
       <a class="btn" href="#apps">Ver las apps</a>
-      <a class="btn sec" href="#suite">Las 5 por $169.000</a>
+      <a class="btn sec" href="#suite">La suite completa</a>
     </div>
   </div>
   <div class="hoja" aria-hidden="false">
@@ -50,8 +51,9 @@
         <p>Elige entre cientos de fotos con dos teclas.</p>
       </div>
       <div class="acc">
+        <span class="pr" data-cop="59000" data-usd="15" data-cop0="89000" data-usd0="22"><s aria-label="Precio normal">$89.000</s> <b>$59.000</b></span>
         <a class="btn sec" href="fotocull.html">Ver cómo funciona</a>
-        <button type="button" class="btn" data-comprar data-nombre="FotoCull" data-precio="59000" data-archivo="CHStudio-FotoCull-Setup.exe" data-mb="28">Comprar $59.000</button>
+        <button type="button" class="btn" data-comprar data-nombre="FotoCull" data-cop="59000" data-usd="15" data-cop0="89000" data-usd0="22" data-archivo="CHStudio-FotoCull-Setup.exe" data-mb="28">Comprar</button>
       </div>
     </li>
     <li class="fila">
@@ -63,8 +65,9 @@
         <p>El PDF con marca de agua para que el cliente elija.</p>
       </div>
       <div class="acc">
+        <span class="pr" data-cop="59000" data-usd="15" data-cop0="89000" data-usd0="22"><s aria-label="Precio normal">$89.000</s> <b>$59.000</b></span>
         <a class="btn sec" href="raw-pdf.html">Ver cómo funciona</a>
-        <button type="button" class="btn" data-comprar data-nombre="RAW a JPG + PDF" data-precio="59000" data-archivo="CHStudio-RawPdf-Setup.exe" data-mb="31">Comprar $59.000</button>
+        <button type="button" class="btn" data-comprar data-nombre="RAW a JPG + PDF" data-cop="59000" data-usd="15" data-cop0="89000" data-usd0="22" data-archivo="CHStudio-RawPdf-Setup.exe" data-mb="31">Comprar</button>
       </div>
     </li>
     <li class="fila">
@@ -76,8 +79,9 @@
         <p>Copia las fotos que pidió el cliente, por número.</p>
       </div>
       <div class="acc">
+        <span class="pr" data-cop="49000" data-usd="12" data-cop0="79000" data-usd0="19"><s aria-label="Precio normal">$79.000</s> <b>$49.000</b></span>
         <a class="btn sec" href="fotopicker.html">Ver cómo funciona</a>
-        <button type="button" class="btn" data-comprar data-nombre="FotoPicker" data-precio="49000" data-archivo="CHStudio-FotoPicker-Setup.exe" data-mb="21">Comprar $49.000</button>
+        <button type="button" class="btn" data-comprar data-nombre="FotoPicker" data-cop="49000" data-usd="12" data-cop0="79000" data-usd0="19" data-archivo="CHStudio-FotoPicker-Setup.exe" data-mb="21">Comprar</button>
       </div>
     </li>
     <li class="fila">
@@ -89,8 +93,9 @@
         <p>Fotos listas para redes, sin la etiqueta «Información de IA».</p>
       </div>
       <div class="acc">
+        <span class="pr" data-cop="49000" data-usd="12" data-cop0="79000" data-usd0="19"><s aria-label="Precio normal">$79.000</s> <b>$49.000</b></span>
         <a class="btn sec" href="exportar-redes.html">Ver cómo funciona</a>
-        <button type="button" class="btn" data-comprar data-nombre="Exportar Redes" data-precio="49000" data-archivo="CHStudio-ExportarRedes-Setup.exe" data-mb="23">Comprar $49.000</button>
+        <button type="button" class="btn" data-comprar data-nombre="Exportar Redes" data-cop="49000" data-usd="12" data-cop0="79000" data-usd0="19" data-archivo="CHStudio-ExportarRedes-Setup.exe" data-mb="23">Comprar</button>
       </div>
     </li>
     <li class="fila">
@@ -102,8 +107,9 @@
         <p>El PDF pesado de Lightroom, liviano en un clic.</p>
       </div>
       <div class="acc">
+        <span class="pr" data-cop="29000" data-usd="7" data-cop0="49000" data-usd0="12"><s aria-label="Precio normal">$49.000</s> <b>$29.000</b></span>
         <a class="btn sec" href="comprimir-pdfs.html">Ver cómo funciona</a>
-        <button type="button" class="btn" data-comprar data-nombre="Comprimir PDFs" data-precio="29000" data-archivo="CHStudio-ComprimirPDFs-Setup.exe" data-mb="25">Comprar $29.000</button>
+        <button type="button" class="btn" data-comprar data-nombre="Comprimir PDFs" data-cop="29000" data-usd="7" data-cop0="49000" data-usd0="12" data-archivo="CHStudio-ComprimirPDFs-Setup.exe" data-mb="25">Comprar</button>
       </div>
     </li>
   </ol>
@@ -112,9 +118,10 @@
 <section id="suite" class="suite">
   <div>
     <h2>Las cinco juntas</h2>
-    <p>Una sola instalación con todo el flujo. Pagas $169.000 en vez de <s>$245.000</s>.</p>
+    <p>Una sola instalación con todo el flujo.</p>
+    <p class="suite-precio"><span class="pr grande" data-cop="169000" data-usd="39" data-cop0="245000" data-usd0="59"><s aria-label="Precio normal">$245.000</s> <b>$169.000</b></span><span class="lanz">Precio de lanzamiento</span></p>
     <div class="cta">
-      <button type="button" class="btn" data-comprar data-nombre="Suite completa" data-precio="169000" data-archivo="CHStudio-Suite-Setup.exe" data-mb="39">Comprar $169.000</button>
+      <button type="button" class="btn" data-comprar data-nombre="Suite completa" data-cop="169000" data-usd="39" data-cop0="245000" data-usd0="59" data-archivo="CHStudio-Suite-Setup.exe" data-mb="39">Comprar</button>
       <a class="btn sec" href="https://github.com/eldelasfotoschimbitas/chstudio/releases/latest/download/CHStudio-Suite-Setup.exe">Descargar instalador</a>
     </div>
   </div>
@@ -126,7 +133,7 @@
   <ol>
     <li><h3>Descarga e instala</h3><p>El instalador es gratis. Sin clave la app no abre, así que puedes descargarla antes de pagar.</p></li>
     <li><h3>Copia tu código</h3><p>Al abrirla verás tu código de equipo y un botón para enviarlo por WhatsApp.</p></li>
-    <li><h3>Paga</h3><p>Por Nequi o Bancolombia, el valor de la app o de la suite.</p></li>
+    <li><h3>Paga</h3><p>Te enviamos los datos de pago por WhatsApp, en pesos o en dólares.</p></li>
     <li><h3>Recibe tu clave</h3><p>Te la mandamos por WhatsApp. La pegas y queda activada para siempre en ese computador.</p></li>
   </ol>
   <figure class="como-img"><img src="img/guias/como-activar.webp" alt="Ventana de activación: código de equipo, botón de WhatsApp y campo para pegar la clave" loading="lazy" width="1400" height="1372"></figure>
@@ -139,6 +146,8 @@
   <details><summary>¿Puedo usarla en dos computadores?</summary><p>Cada clave sirve en un computador. Si necesitas otro, escríbenos.</p></details>
   <details><summary>Windows dice «Windows protegió su PC»</summary><p>Pasa con programas nuevos. Da clic en «Más información» y luego en «Ejecutar de todas formas».</p></details>
   <details><summary>¿Y si formateo o cambio de computador?</summary><p>El código de equipo cambia. Escríbenos y te damos una clave nueva.</p></details>
+  <details><summary>¿Puedo pagar desde fuera de Colombia?</summary><p>Sí. Cambia la moneda a USD arriba y escríbenos por WhatsApp; te enviamos cómo pagar en dólares.</p></details>
+  <details><summary>¿Cómo sé que la compra y el instalador son originales?</summary><p>Solo vendemos en esta página y por el WhatsApp +57 313 346 9261. Descarga el instalador solo desde aquí o desde <a href="https://github.com/eldelasfotoschimbitas/chstudio/releases/latest">la página oficial de descargas</a>, donde también está la huella SHA-256 de cada archivo para verificarlo. Nunca te pediremos claves, códigos de verificación ni datos de tu banco.</p></details>
   <details><summary>¿Qué cámaras soporta?</summary><p>JPG y RAW de Canon, Nikon, Sony, Fujifilm, Panasonic, Olympus, Pentax, Samsung y DNG.</p></details>
 </section>
 </main>
@@ -153,7 +162,7 @@
 <dialog id="compra" aria-labelledby="compra-titulo">
   <form method="dialog" class="cerrar-f"><button class="cerrar" aria-label="Cerrar">×</button></form>
   <h2 id="compra-titulo">Comprar <span data-c="nombre"></span></h2>
-  <p class="precio-dlg" data-c="precio"></p>
+  <p class="precio-dlg"><s data-c="antes"></s> <b data-c="precio"></b> <span class="lanz">Precio de lanzamiento</span></p>
   <ol class="pasos-compra">
     <li>
       <h3>Descarga e instala</h3>
@@ -167,7 +176,7 @@
     </li>
     <li>
       <h3>Pide los datos de pago</h3>
-      <p>Escríbenos por WhatsApp y te enviamos cómo pagar <span data-c="precio2"></span>.</p>
+      <p>Escríbenos por WhatsApp y te enviamos cómo pagar <span data-c="precio2"></span>. <span class="intl">Desde fuera de Colombia también puedes pagar en dólares.</span></p>
     </li>
     <li>
       <h3>Recibe tu clave</h3>

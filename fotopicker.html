@@ -17,9 +17,10 @@
 </head>
 <body>
 <header class="barra">
-  <a class="marca" href="index.html" aria-label="CH Studio, inicio"><img src="img/ch.png" alt="" width="34" height="34"><span>CH Studio</span></a>
-  <nav><a href="index.html#apps">Todas las apps</a><a href="index.html#comprar-como">Cómo comprar</a></nav>
+  <div class="izq"><a class="volver" href="index.html#apps"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Volver</a><a class="marca" href="index.html" aria-label="CH Studio, inicio"><img src="img/ch.png" alt="" width="34" height="34"><span>CH Studio</span></a></div>
+  <nav><a href="index.html#apps">Todas las apps</a><a href="index.html#comprar-como">Cómo comprar</a><div class="moneda" role="group" aria-label="Moneda"><button type="button" data-moneda="cop" aria-pressed="true">COP</button><button type="button" data-moneda="usd" aria-pressed="false">USD</button></div></nav>
 </header>
+<a class="subir" href="#" aria-label="Volver arriba"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 15l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 
 <main class="prod">
 <section class="prod-hero">
@@ -28,8 +29,9 @@
     <h1>FotoPicker</h1>
     <p class="frase">Copia las fotos que pidió el cliente, por número.</p>
     <p class="lead">El cliente te manda «2841, 2845, 2850…» y buscarlas una por una en la memoria toma una eternidad. FotoPicker las encuentra y las copia de una, y te dice si faltó alguna.</p>
+    <p class="prod-precio"><span class="pr grande" data-cop="49000" data-usd="12" data-cop0="79000" data-usd0="19"><s aria-label="Precio normal">$79.000</s> <b>$49.000</b></span><span class="lanz">Precio de lanzamiento</span></p>
     <div class="cta">
-      <button type="button" class="btn" data-comprar data-nombre="FotoPicker" data-precio="49000" data-archivo="CHStudio-FotoPicker-Setup.exe" data-mb="21">Comprar $49.000</button>
+      <button type="button" class="btn" data-comprar data-nombre="FotoPicker" data-cop="49000" data-usd="12" data-cop0="79000" data-usd0="19" data-archivo="CHStudio-FotoPicker-Setup.exe" data-mb="21">Comprar</button>
       <a class="btn sec" href="https://github.com/eldelasfotoschimbitas/chstudio/releases/latest/download/CHStudio-FotoPicker-Setup.exe">Descargar instalador</a>
     </div>
     <p class="req">Windows 10 y 11. Funciona sin internet. Licencia para un computador.</p>
@@ -66,9 +68,10 @@
 
 <section class="cierre">
   <img src="img/apps/fotopicker.png" alt="" width="96" height="96">
-  <h2>FotoPicker por $49.000</h2>
-  <p>O las cinco apps por $169.000.</p>
-  <div class="cta"><button type="button" class="btn" data-comprar data-nombre="FotoPicker" data-precio="49000" data-archivo="CHStudio-FotoPicker-Setup.exe" data-mb="21">Comprar $49.000</button><button type="button" class="btn sec" data-comprar data-nombre="Suite completa" data-precio="169000" data-archivo="CHStudio-Suite-Setup.exe" data-mb="39">Comprar $169.000</button></div>
+  <h2>FotoPicker</h2>
+  <p class="cierre-precio"><span class="pr grande" data-cop="49000" data-usd="12" data-cop0="79000" data-usd0="19"><s aria-label="Precio normal">$79.000</s> <b>$49.000</b></span></p>
+  <p>O las cinco apps por <span class="pr" data-cop="169000" data-usd="39" data-cop0="245000" data-usd0="59"><s aria-label="Precio normal">$245.000</s> <b>$169.000</b></span>.</p>
+  <div class="cta"><button type="button" class="btn" data-comprar data-nombre="FotoPicker" data-cop="49000" data-usd="12" data-cop0="79000" data-usd0="19" data-archivo="CHStudio-FotoPicker-Setup.exe" data-mb="21">Comprar</button><button type="button" class="btn sec" data-comprar data-nombre="Suite completa" data-cop="169000" data-usd="39" data-cop0="245000" data-usd0="59" data-archivo="CHStudio-Suite-Setup.exe" data-mb="39">Comprar</button></div>
 </section>
 
 <nav class="otras" aria-label="Otras apps">
@@ -87,7 +90,7 @@
 <dialog id="compra" aria-labelledby="compra-titulo">
   <form method="dialog" class="cerrar-f"><button class="cerrar" aria-label="Cerrar">×</button></form>
   <h2 id="compra-titulo">Comprar <span data-c="nombre"></span></h2>
-  <p class="precio-dlg" data-c="precio"></p>
+  <p class="precio-dlg"><s data-c="antes"></s> <b data-c="precio"></b> <span class="lanz">Precio de lanzamiento</span></p>
   <ol class="pasos-compra">
     <li>
       <h3>Descarga e instala</h3>
@@ -101,7 +104,7 @@
     </li>
     <li>
       <h3>Pide los datos de pago</h3>
-      <p>Escríbenos por WhatsApp y te enviamos cómo pagar <span data-c="precio2"></span>.</p>
+      <p>Escríbenos por WhatsApp y te enviamos cómo pagar <span data-c="precio2"></span>. <span class="intl">Desde fuera de Colombia también puedes pagar en dólares.</span></p>
     </li>
     <li>
       <h3>Recibe tu clave</h3>

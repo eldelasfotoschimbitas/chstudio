@@ -281,3 +281,52 @@ dialog h2 { font-size: 30px; font-variation-settings: "wdth" 112; padding-right:
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* ---------- precios, moneda, volver ---------- */
+.pr { display: inline-flex; align-items: baseline; gap: 8px; white-space: nowrap; }
+.pr s { color: var(--gris-2); font-weight: 500; text-decoration-thickness: 1.5px; }
+.pr b { color: var(--oro); font-weight: 800; font-size: 1.12em; }
+.pr.grande { font-size: clamp(24px, 2.6vw, 34px); font-variation-settings: "wdth" 110; }
+.pr.grande s { font-size: .62em; }
+.lanz {
+  display: inline-block; margin-left: 12px; font-size: 13px; font-weight: 700; color: var(--negro);
+  background: var(--oro-claro); padding: 3px 10px; border-radius: 999px; vertical-align: middle;
+}
+.prod-precio, .suite-precio { margin-top: 24px; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.cierre-precio { margin: 4px 0; }
+.fila .acc { align-items: center; }
+.fila .acc .pr { margin-right: 8px; }
+.precio-dlg { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.precio-dlg s { color: var(--gris-2); font-size: 17px; font-weight: 500; }
+.precio-dlg .lanz { margin-left: 0; }
+
+.izq { display: flex; align-items: center; gap: 14px; }
+.volver {
+  display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-size: 15px; font-weight: 600;
+  padding: 7px 14px 7px 10px; border: 1px solid #333; border-radius: 999px; color: var(--blanco);
+}
+.volver:hover { border-color: var(--blanco); }
+.barra nav { align-items: center; }
+.moneda { display: inline-flex; border: 1px solid #333; border-radius: 999px; padding: 3px; gap: 2px; }
+.moneda button {
+  background: none; border: 0; color: var(--gris); font: inherit; font-size: 13px; font-weight: 700;
+  padding: 5px 11px; border-radius: 999px; cursor: pointer;
+}
+.moneda button[aria-pressed="true"] { background: var(--blanco); color: var(--negro); }
+
+.subir {
+  position: fixed; right: clamp(14px, 3vw, 32px); bottom: clamp(14px, 3vw, 32px); z-index: 30;
+  width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--blanco); color: var(--negro); box-shadow: 0 10px 30px rgba(0, 0, 0, .6);
+  opacity: 0; pointer-events: none; transform: translateY(10px); transition: opacity .2s, transform .2s;
+}
+.subir.ver { opacity: 1; pointer-events: auto; transform: none; }
+
+@media (max-width: 900px) {
+  .barra nav a { display: none !important; }
+  .marca span { display: none; }
+  .fila .acc .pr { width: 100%; }
+}
+
+.prod-ico img, .fila .ico, .flota img, .suite-iconos img, .cierre img, .otras a img { height: auto; }
+

@@ -404,3 +404,23 @@ dialog h2 { font-size: 30px; font-variation-settings: "wdth" 112; padding-right:
 .codigo-compra code { font: 800 clamp(20px, 4vw, 30px) Consolas, monospace; letter-spacing: .06em; color: var(--oro-claro);
   background: #121212; border: 1px solid var(--oro); border-radius: 14px; padding: 16px 20px; }
 .g-pasos { text-align: left; max-width: 420px; margin: 36px auto 0; color: var(--gris); line-height: 1.8; }
+
+/* ---------- imágenes de guía sin deformar ---------- */
+.como-img img, .guia img { height: auto; }
+
+/* ---------- contacto ---------- */
+.contacto { text-align: center; border-top: 1px solid var(--linea); }
+.contacto > p { color: var(--gris); margin-top: 12px; }
+.contacto-lista { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 34px; text-align: left; }
+.contacto-item {
+  display: flex; align-items: center; gap: 14px; padding: 18px; border: 1px solid #2a2a2a; border-radius: 18px;
+  text-decoration: none; background: var(--panel); transition: border-color .15s, transform .15s;
+}
+.contacto-item:hover { border-color: var(--blanco); transform: translateY(-2px); }
+.contacto-item svg { flex: none; }
+.contacto-item b { display: block; font-size: 17px; }
+.contacto-item small { display: block; color: var(--gris); font-size: 13px; overflow-wrap: anywhere; }
+.c-wa svg { color: #25d366; } .c-ig svg { color: #e1306c; } .c-tt svg { color: #f4f4f2; } .c-yt svg { color: #ff3b30; }
+.pie-legal { color: var(--gris-2); font-size: 13px; }
+@media (max-width: 900px) { .contacto-lista { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .contacto-lista { grid-template-columns: 1fr; } }
